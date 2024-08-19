@@ -1,0 +1,390 @@
+.light {
+  background-color: white;
+  color: black;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.dark {
+  background-color: #171723;
+  color: white;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.backgroundLight {
+  background-image: url("../../../public/img/img_todo/bg-desktop-light.jpg");
+  background-size: auto;
+  background-repeat: no-repeat;
+}
+.backgroundDark {
+  background-image: url("../../../public/img/img_todo/bg-desktop-dark.jpg");
+  background-size: auto;
+  background-repeat: no-repeat;
+}
+.todoContainer {
+  display: flex;
+  padding-bottom: 50px;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.todoContainerBlock {
+  padding-top: 50px;
+  max-width: 500px;
+  max-height: 100%;
+  padding-bottom: 10px;
+}
+.todoContainerTitle {
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+.todoContainerToggleTheme {
+  background: transparent;
+  border: none;
+  position: relative;
+  transition: transform 2s ease;
+}
+.todoContainerToggleTheme img {
+  transition: transform 2s ease;
+}
+
+.todoContainerToggleTheme.light img {
+  transform: rotate(0deg);
+}
+.todoContainerToggleTheme.dark img {
+  transform: rotate(360deg);
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 5px;
+  border-bottom: 1px solid #555a79;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.todoInputBlock {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.todoInput {
+  min-width: 500px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  padding-left: 10px;
+}
+
+.buttonDeleteTask {
+  border: none;
+  padding-right: 5px;
+}
+
+.inputCheckBox {
+  margin-right: 5px;
+  width: 1.3em;
+  height: 1.3em;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 1px solid #555a79;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+.inputCheckBox:hover {
+  border: 1px solid white;
+}
+
+.textAndCheckbox {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+.textAndCheckbox::before {
+  display: flex;
+  align-items: center;
+  top: 50%;
+}
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  min-width: 230px;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 5px;
+  height: 20px;
+  margin-bottom: 50px;
+}
+.buttonNav {
+  color: #555a79;
+  border: none;
+  margin: 10px;
+  cursor: pointer;
+}
+.dark .buttonNav:hover {
+  color: white;
+}
+.light .buttonNav:hover {
+  color: black;
+}
+.footer {
+  color: #555a79;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.footerTitle {
+  display: flex;
+  justify-content: center;
+  font-size: 10px;
+}
+.footerString {
+  display: flex;
+  justify-content: center;
+  font-size: 10px;
+}
+
+.inputCheckBox {
+  display: none;
+}
+
+.customCheckbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.customCheckbox :after {
+  content: "";
+  position: absolute;
+  z-index: 10;
+  top: 4px;
+  left: 8px;
+  width: 5px;
+  height: 10px;
+  border: 1px solid #007bff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  border: solid white;
+  display: none;
+}
+
+.inputCheckBox:checked + .customCheckbox {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70%;
+  border: 2px dotted #007bff;
+}
+
+.inputCheckBox:checked + .customCheckbox:after {
+  display: block;
+}
+.customCheckbox .light::after {
+  border-color: black;
+}
+.customCheckbox .dark::after {
+  border-color: white;
+}
+
+.dark .task,
+.dark .navBar,
+.dark .footer {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.light .task,
+.light .navBar,
+.light .footer {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.dark .buttonNav,
+.dark .buttonDeleteTask {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.light .buttonNav,
+.light .buttonDeleteTask {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+.customCheckbox.light {
+  border: 2px solid black;
+}
+
+.inputCheckBox:checked + .customCheckbox.light {
+  background-image: url("../../../public/img/img_todo/check.png");
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.inputCheckBox:checked + .customCheckbox.dark {
+  background-image: url("../../../public/img/img_todo/icon-check.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.taskText {
+position: relative;
+}
+
+.taskContentSmoothStrikethrough {
+  position: relative;
+  display: inline-block;
+}
+
+@keyframes strikeThrough {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.changeTextTask{
+  height: 100%;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.taskContentSmoothStrikethrough::after {
+  position: absolute;
+  left: 0;
+  top: 60%;
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: black;
+  transform: translateY(-50%);
+  transition: width 2s ease;
+}
+
+.taskText.completed .taskContentSmoothStrikethrough::after {
+  width: 100%;
+}
+
+.light .taskContentSmoothStrikethrough::after {
+  background-color: black;
+}
+
+.dark .taskContentSmoothStrikethrough::after {
+  background-color: white;
+}
+
+.todoContainerHeader {
+  display: flex;
+  justify-content: space-between;
+  background: transparent;
+}
+.taskFadeOut {
+  animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+  }
+}
+.clickTextTask {
+  cursor: pointer;
+}
+.buttonPencilEdit {
+  border: none;
+  background: none;
+}
+.imagePencilEdit {
+  width: 10px;
+  height: 10px;
+}
+
+.taskEditDeleteBlock {
+  display: flex;
+  gap: 25px;
+}
+@media (max-width: 768px) {
+  .todoContainerBlock {
+    padding: 20px 10px;
+    width: 80%;
+  }
+
+  .task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 20px 10px 10px 5px;
+    border-bottom: 1px solid #555a79;
+    flex-wrap: wrap;
+    width: 100%;
+    position: relative;
+  }
+
+  .todoInput {
+    min-width: 100%;
+  }
+
+
+  .navBar {
+    height: 100%;
+    margin-top: 15px;
+    flex-direction: column;
+  }
+
+  .buttonNav {
+    font-size: 12px;
+  }
+
+  .footerTitle,
+  .footerString {
+    font-size: 8px;
+  }
+
+  .todoInputBlock {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .customCheckbox {
+    width: 16px;
+    height: 16px;
+  }
+
+  .imagePencilEdit {
+    width: 8px;
+    height: 8px;
+  }
+  .textAndCheckbox{
+    word-wrap: break-word;
+  }
+  .taskEditDeleteBlock{
+    flex-wrap: nowrap;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+
+  }
+
+  
+}

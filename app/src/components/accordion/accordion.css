@@ -1,0 +1,25 @@
+.accordion{
+	margin: 16px;
+	padding: 16px;
+	background-color: #FFF;
+	border: 1px solid ;
+	border-radius: 10px;
+	width: 60%;
+	border-radius: 7px;
+	list-style-type: none;
+}
+.accordionItem{
+	margin-bottom: 16px;
+	background-color: #fff;
+	border-radius: 7px;
+	
+}
+.accordion-header{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background:none ;
+	border:none;
+
+}

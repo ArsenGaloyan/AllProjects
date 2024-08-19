@@ -1,0 +1,40 @@
+body{
+	height: 100vh;
+	background-color:#fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+ }
+ .titleTabs{
+	text-align: center;
+	font-size: 150px;
+ }
+ .containerTabs{ 
+	width: 600px;
+	min-height: 300px;
+	border: 1px solid ;
+ }
+ .containerTabsBtns{
+	display: flex;
+	width: 100%;
+	height: 50px;
+	justify-content: space-between;
+ }
+ .btnTab{
+	width: 100%;
+	background: transparent;
+	border: 1px solid ;
+ }
+ .textContent{
+	padding: 20px;
+ }
+ .textContentTitle{
+	padding-bottom: 20px;
+	border-bottom: 2px solid gray;
+ }
+ .active{
+	width: 100%;
+	background: transparent;
+	border: none;
+	border-top: 5px solid blue;
+ }
