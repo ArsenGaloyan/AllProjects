@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { TiPencil } from "react-icons/ti";
 
 export default function TaskTodo({
   status,
@@ -90,7 +91,7 @@ export default function TaskTodo({
             className="buttonPencilEdit"
             onClick={handleOpenEditTask}
           >
-            <img className="imagePencilEdit" src="/img/pencil.png"></img>
+           {theme === "light"?<TiPencil />:<TiPencil style = {{color: "white"}}/>}
           </button>
           <button
             className={`buttonDeleteTask ${theme}`}
