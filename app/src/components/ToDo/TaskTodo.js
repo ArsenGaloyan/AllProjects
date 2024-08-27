@@ -68,7 +68,7 @@ export default function TaskTodo({
         >
           {isEditing ? (
             <textarea
-            className="changeTextTask"
+            className= {` changeTextTask ${theme}`}
               type="text"
               value={editText}
               onChange={(e) => setEditText(e.target.value)}
@@ -82,8 +82,8 @@ export default function TaskTodo({
       </div>
       {isEditing ? (
         <div className="taskEditDeleteBlock">
-          <button onClick={handleSaveEdit}>Сохранить</button>
-          <button onClick={handleCancelEdit}>Отменить</button>
+          <button  className='buttonSaveEdit'onClick={handleSaveEdit}>Save</button>
+          <button className='buttonDeleteEdit' onClick={handleCancelEdit}>Cancel</button>
         </div>
       ) : (
         <div className="taskEditDeleteBlock">
