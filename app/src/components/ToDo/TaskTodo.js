@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { TiPencil } from "react-icons/ti";
+import { TiArrowUpThick } from "react-icons/ti";
+import { TiArrowUpOutline } from "react-icons/ti";
+import Modal from "./Modal.js";
 
 export default function TaskTodo({
   status,
@@ -13,10 +16,21 @@ export default function TaskTodo({
 }) {
   const [isEditing, setIsEditing] = useState(false);
   const [editText, setEditText] = useState(text);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [shortenedText, setShortenedText] = useState(text);
+  const [openModalWindow,setOpenModalWindow] = useState(false);
+
+
+
+
 
   useEffect(() => {
-    setEditText(text);
-  }, [text]);
+    if (isExpanded || text.length <= 25) {
+      setShortenedText(text); 
+    } else {
+      setShortenedText(text.substring(0, 25) ); 
+    }
+  }, [text, isExpanded]);
 
   const taskContent = function (status, text) {
     return status ? (
@@ -33,7 +47,7 @@ export default function TaskTodo({
   };
   const handleCancelEdit = () => {
     setIsEditing(!isEditing)
-    setEditText()
+    setEditText(text)
   };
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
@@ -45,6 +59,9 @@ export default function TaskTodo({
     setIsEditing(true)
 
   }
+  const handleToggleExpand = () => {
+    setIsExpanded(!isExpanded);
+  };
 
   return (
     <div
@@ -76,7 +93,31 @@ export default function TaskTodo({
               onClick = {(e)=>e.stopPropagation()}
             />
           ) : (
-            taskContent(status, text)
+            <span className="textAndEllipsis">
+            {taskContent(status, shortenedText)}{" "}
+            {!isExpanded && text.length > 25 && (
+              <span
+                className= {` expandText ${theme}`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setOpenModalWindow(true);
+                }}
+              >
+                ...
+              </span>
+            )}
+            {isExpanded && (
+              <span
+                className="collapseText"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleToggleExpand();
+                }}
+              >
+               {theme === "light"?<TiArrowUpOutline />:<TiArrowUpThick />}
+              </span>
+            )}
+          </span>
           )}
         </div>
       </div>
@@ -100,6 +141,9 @@ export default function TaskTodo({
             X
           </button>
         </div>
+      )}
+         {openModalWindow && (
+        <Modal theme = {theme} text={text} onClose={() => setOpenModalWindow(false)} />
       )}
     </div>
   );

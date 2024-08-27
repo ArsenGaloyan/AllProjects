@@ -60,7 +60,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: white;
   padding: 5px;
   border-bottom: 1px solid #555a79;
   word-wrap: break-word;
@@ -112,6 +111,10 @@
   display: flex;
   align-items: center;
   top: 50%;
+}
+.textAndEllipsis {
+  display: flex;
+  align-items: center;
 }
 .navBar {
   display: flex;
@@ -240,7 +243,8 @@
 }
 
 .taskText {
-position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .taskContentSmoothStrikethrough {
@@ -257,7 +261,7 @@ position: relative;
   }
 }
 
-.changeTextTask{
+.changeTextTask {
   height: 100%;
   padding: 10px;
   margin-top: 10px;
@@ -333,18 +337,15 @@ position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: white;
     padding: 20px 10px 10px 5px;
     border-bottom: 1px solid #555a79;
     flex-wrap: wrap;
     width: 100%;
-    position: relative;
   }
 
   .todoInput {
     min-width: 100%;
   }
-
 
   .navBar {
     height: 100%;
@@ -375,30 +376,92 @@ position: relative;
     width: 8px;
     height: 8px;
   }
-  .textAndCheckbox{
+  .textAndCheckbox {
     word-wrap: break-word;
   }
-  .taskEditDeleteBlock{
+  .taskEditDeleteBlock {
     flex-wrap: nowrap;
     position: absolute;
     right: 10px;
     top: 10px;
-
   }
-
-  
 }
-.buttonSaveEdit{
+.buttonSaveEdit {
   border-radius: 10px;
   padding: 10px;
-  color:white;
+  color: white;
   background-color: green;
-  border:none;
+  border: none;
 }
-.buttonDeleteEdit{
+.buttonDeleteEdit {
   border-radius: 10px;
   padding: 10px;
-  color:white;
+  color: white;
   background-color: red;
-  border:none;
+  border: none;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+}
+
+.modalContent {
+  position: fixed;
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modalContent p {
+  margin: 0 0 20px;
+}
+
+.closeButton {
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.closeButton:hover {
+  background: #0056b3;
+}
+.light .modalOverlay{
+  background-color: white;
+  transition: transform 2s ease;
+}
+.dark .modalOverlay{
+  color:white;
+  background-color: #171723;
+    transition: transform 2s ease;
+}
+
+.light .modalContent{
+  background-color: white;
+  transition: transform 2s ease;
+}
+.dark .modalContent{
+  color: white;;
+  background-color: #171723;
+  transition: transform 2s ease;
+}
+
+.expandText:hover{
+cursor:pointer;
+text-decoration: underline;
 }
