@@ -1,5 +1,7 @@
 // import FirstProject from "./components/firstProject/FirstProject";
 
+// import JsonPlaceholder from "./components/API/JsonPlaceholder/JsonPlaceholder";
+
 import { ToDo } from "./components/ToDo/Todo";
 
 
@@ -17,7 +19,9 @@ function App() {
       {/* <Vacation/> */}
       {/* <Accordion/> */}
       <ToDo />
-    </>
+      {/* <JsonPlaceholder/> */}
+      </>
+
   );
 }
 

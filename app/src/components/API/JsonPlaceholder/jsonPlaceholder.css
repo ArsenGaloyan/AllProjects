@@ -1,0 +1,36 @@
+.nameUserBlock{
+
+}
+.nameUserItem{
+	padding: 5px;
+	margin: 10px;
+}
+.infoCardUserBlock{
+border: 1px solid grey;
+
+}
+.buttonShowPosts{
+	padding: 5px;
+}
+.postNameTitle{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.postUserBlock{
+display: flex;
+}
+.postsContainers{
+	
+}
+.postsContainer{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.postUserBlockItem{
+	width: 500px;
+	height: 150px;
+	border: 1px solid grey;
+	padding: 10px;
+	margin-bottom: 20px;
+}

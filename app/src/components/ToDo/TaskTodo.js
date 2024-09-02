@@ -146,5 +146,6 @@ export default function TaskTodo({
         <Modal theme = {theme} text={text} onClose={() => setOpenModalWindow(false)} />
       )}
     </div>
+
   );
 }

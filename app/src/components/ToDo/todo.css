@@ -1,3 +1,10 @@
+body{
+  position: relative;
+  background-color: #171723;
+}
+
+
+
 .light {
   background-color: white;
   color: black;
@@ -12,12 +19,12 @@
 
 .backgroundLight {
   background-image: url("../../../public/img/img_todo/bg-desktop-light.jpg");
-  background-size: 100%;
+  background-size:contain;
   background-repeat: no-repeat;
 }
 .backgroundDark {
   background-image: url("../../../public/img/img_todo/bg-desktop-dark.jpg");
-  background-size: 100%;
+  background-size: contain;
   background-repeat: no-repeat;
 }
 .todoContainer {
@@ -139,6 +146,8 @@
   color: black;
 }
 .footer {
+  position: relative;
+  z-index: 1;
   color: #555a79;
   bottom: 0;
   left: 0;
@@ -381,7 +390,6 @@
   }
   .taskEditDeleteBlock {
     flex-wrap: nowrap;
-    position: absolute;
     right: 10px;
     top: 10px;
   }
@@ -402,20 +410,22 @@
 }
 
 .modalOverlay {
-  position: fixed;
+  position: fixed; 
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); 
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1001;
+  padding-right: 0;
+  animation: fadeIn 0.3s ease-out;
 }
 
+
 .modalContent {
-  position: fixed;
   background: white;
   border-radius: 8px;
   padding: 20px;
