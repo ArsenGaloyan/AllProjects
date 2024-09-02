@@ -24,8 +24,9 @@ import TaskTodo from "./TaskTodo";
 // 13 при объеме текста больше чем 75% от всей таски. Дальнейшие слова будут скрыты и заместо них ...+
 // 14 полный текст таски будет отображаться в модальном окене при нажатии...+
 // 15 модальное окно должно отерываться только при условии что текста больше чем 75% и открывать при нажатии на ...+
-// 16 посмотреть про порталы https://ru.legacy.reactjs.org/docs/portals.html видео: https://www.youtube.com/watch?v=V4sHZzX4zh0 
+// 16 посмотреть про порталы https://ru.legacy.reactjs.org/docs/portals.html видео: https://www.youtube.com/watch?v=V4sHZzX4zh0
 // 17 при наведении на ... появлется эффект ссылки (нижнее подчеркивание)+
+// 18 посмотреть про useCallback переписать в Modal
 const FILTRES = { ALL: "all", ACTIVE: "active", COMPLETED: "completed" };
 
 export const ToDo = () => {
@@ -35,7 +36,6 @@ export const ToDo = () => {
   const [vision, setVision] = useState(FILTRES.ALL);
   const [theme, setTheme] = useState("light");
   const [removingTaskId, setRemovingTaskId] = useState(null);
-  const [isEditing, setIsEditing] = useState(false);
 
   useEffect(() => {
     const hour = new Date().getHours();
@@ -119,7 +119,6 @@ export const ToDo = () => {
             theme={theme}
             removingTaskId={removingTaskId}
             handleEditTask={handleEditTask}
-            setIsEditing={setIsEditing}
           />
         ))}
 
