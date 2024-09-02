@@ -72,6 +72,18 @@ export const ToDo = () => {
       tasks.map((task) => (task.id === id ? { ...task, text: newText } : task))
     );
   };
+  const handleClickClearCompleted = () =>{
+    setTasks(
+      tasks.filter(el => {
+        if(el.completed){
+          return false
+        }else{
+          return true
+        }
+      })
+
+    )
+  }
 
   const filtredTask = tasks.filter((task) => {
     if (vision === FILTRES.ALL) return true;
@@ -144,7 +156,7 @@ export const ToDo = () => {
           >
             Completed
           </button>
-          <button onClick={() => setTasks([])} className={`buttonNav ${theme}`}>
+          <button onClick={() => setTasks(tasks.filter(el => !el.status))} className={`buttonNav ${theme}`}>
             Clear Completed
           </button>
         </div>
